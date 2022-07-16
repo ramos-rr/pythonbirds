@@ -1,0 +1,20 @@
+from carros import Carro, Direcao, Motor
+
+carro = Carro(Direcao('Sul'), Motor(100))
+carro.girar_direita()
+print(carro.calcular_direcao())
+carro.girar_esquerda()
+print(carro.calcular_direcao())
+carro.girar_esquerda()
+print(carro.calcular_direcao())
+carro.girar_esquerda()
+print(carro.calcular_direcao())
+carro.girar_esquerda()
+print(carro.calcular_direcao())
+carro.girar_esquerda()
+print(carro.calcular_direcao())
+carro.girar_esquerda()
+print(carro.calcular_direcao())
+for v in range(190):
+    carro.acelerar()
+print(carro.calcular_velocidade())
