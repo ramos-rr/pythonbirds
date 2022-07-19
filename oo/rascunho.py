@@ -1,20 +1,6 @@
-from carros import Carro, Direcao, Motor
+import math
 
-carro = Carro(Direcao('Sul'), Motor(100))
-carro.girar_direita()
-print(carro.calcular_direcao())
-carro.girar_esquerda()
-print(carro.calcular_direcao())
-carro.girar_esquerda()
-print(carro.calcular_direcao())
-carro.girar_esquerda()
-print(carro.calcular_direcao())
-carro.girar_esquerda()
-print(carro.calcular_direcao())
-carro.girar_esquerda()
-print(carro.calcular_direcao())
-carro.girar_esquerda()
-print(carro.calcular_direcao())
-for v in range(190):
-    carro.acelerar()
-print(carro.calcular_velocidade())
+angulo = 89
+
+rad = math.radians(angulo)
+print(rad)

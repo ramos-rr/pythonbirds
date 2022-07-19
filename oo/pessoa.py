@@ -8,7 +8,7 @@ class Pessoa:
 
 
     def comprimentar(self):
-        return f'Olá {id(self)}'
+        return f'Olá {self.nome}'
 
     @staticmethod
     def metodo_estatico():
@@ -20,10 +20,20 @@ class Pessoa:
         return f'{cls} - olhos {cls.olhos}'
 
 
+class Homem(Pessoa):
+    def comprimentar(self):
+        comprimetar_de_classe = super().comprimentar()
+        return f'{comprimetar_de_classe}. Aperto de Mão!'
+
+
+class Mutante(Pessoa):
+    olhos = 3
+
+
 if __name__ == '__main__':
-    renzo = Pessoa(nome='Renzo')
-    tiago = Pessoa(nome='Tiago')
-    luciano = Pessoa(renzo, tiago, nome='Luciano', idade=33)
+    renzo = Mutante(nome='Renzo')
+    tiago = Homem(nome='Tiago')
+    luciano = Homem(renzo, tiago, nome='Luciano', idade=33)
     print(Pessoa.comprimentar(luciano))
     print(id(luciano))
     print(luciano.comprimentar())
@@ -38,7 +48,6 @@ if __name__ == '__main__':
     luciano.olhos = 1
     print(renzo.__dict__)
     print(luciano.__dict__)
-    Pessoa.olhos = 3
     #del luciano.olhos
     print(renzo.__dict__)
     print(luciano.__dict__)
@@ -50,3 +59,13 @@ if __name__ == '__main__':
     print(Pessoa.__dict__.keys())
     print(Pessoa.metodo_estatico(), luciano.metodo_estatico())
     print(Pessoa.nome_e_atributos_de_classe(), luciano.nome_e_atributos_de_classe())
+    pessoa = Pessoa('Anonimo')
+    print(isinstance(pessoa, Pessoa))
+    print(isinstance(pessoa, Homem))
+    print(isinstance(renzo, Pessoa))
+    print(isinstance(renzo, Homem))
+    print(issubclass(Homem, Pessoa))
+    print(issubclass(Pessoa, Homem))
+    print(renzo.olhos)
+    print(renzo.comprimentar())
+    print(luciano.comprimentar())

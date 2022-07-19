@@ -100,7 +100,7 @@ class Motor:
         self.velocidade = max(0, self.velocidade)
 
 
-orientacao = ['Norte', 'Nordeste', 'Leste', 'Sudeste', 'Sul', 'Sudoeste', 'Oeste', 'Noroeste']
+orientacao = ['Norte', 'Leste', 'Sul', 'Oeste']
 
 
 class Direcao:
